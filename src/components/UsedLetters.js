@@ -1,13 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
 
-const WrongLetters = ({ wrongLetters }) => {
+
+const UsedLetters = ({ usedLetters }) => {
   return (
-    <div className="wrong-letters-container">
+    <div className="used-letters-container">
       <div>
-        <Wrong>Wrong Letters:</Wrong>
+        <Used>Used Letters:</Used>
         <Letters>
-        {wrongLetters.reduce(
+        {usedLetters.reduce(
           (prev, curr) => (prev === null ? [curr] : [prev, ", ", curr]),
           null
         )}
@@ -17,7 +18,7 @@ const WrongLetters = ({ wrongLetters }) => {
   );
 };
 
-const Wrong = styled.div`
+const Used = styled.div`
 padding-top: 50px;
 font-size: 1.2em;
 `;
@@ -26,4 +27,4 @@ const Letters = styled.div`
 font-size: 1.2em;
 `;
 
-export default WrongLetters;
+export default UsedLetters;
